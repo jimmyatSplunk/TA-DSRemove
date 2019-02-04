@@ -1,4 +1,4 @@
-# TA_DSRemove
+# TA-DSRemove
 Splunk TA to remove local configurations of deploymentclient.conf.
 
 When deploying, configure deployment server to restart target instances when the app installation is complete.
