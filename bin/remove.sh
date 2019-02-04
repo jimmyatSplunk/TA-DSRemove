@@ -7,11 +7,8 @@ then
 fi
 
 # Remove the deploymentclient.conf from $SPLUNK_HOME/etc/system/local
-rm -f $SPLUNK_HOME/etc/system/local/deploymentclient.conf
+rm -f $SPLUNK_HOME/etc/system/local/deploymentclient.conf > /dev/null 2>&1
 
-# If the checkpoint file exists, log success
-if [ -f $SPLUNK_HOME/etc/ds_changed  ]
-then
-	echo `date -R` $HOSTNAME: Deploymentclient.conf removed from local system.
-	echo `date -R` $HOSTNAME: Deploymentclient.conf removed from local system. > $SPLUNK_HOME/etc/ds_changed
-fi
+# Create checkpoint file and log success
+echo `date -R` $HOSTNAME: Deploymentclient.conf removed from local system.
+echo `date -R` $HOSTNAME: Deploymentclient.conf removed from local system. > $SPLUNK_HOME/etc/ds_changed
