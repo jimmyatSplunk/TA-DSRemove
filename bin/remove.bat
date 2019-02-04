@@ -26,5 +26,6 @@ exit
 
 REM Log that the deploymentclient.conf was already removed and exit
 :NOCHANGE
+echo %date% %time% %HOST%: Deploymentclient.conf removed from local system. > "%CHECKPOINT%"
 echo %date% %time% %HOST%: Deploymentclient.conf already removed from local system.
 exit
